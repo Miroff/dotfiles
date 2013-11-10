@@ -105,6 +105,8 @@ function prompt_command {
   local PS1_VENV=
   local GIT_BRANCH=
   local GIT_DIRTY=
+  local PS1_SSH=
+
   local PWDNAME=$PWD
 
   # beautify working directory name
@@ -112,6 +114,12 @@ function prompt_command {
      PWDNAME="~"
   elif [[ "${HOME}" == "${PWD:0:${#HOME}}" ]]; then
      PWDNAME="~${PWD:${#HOME}}"
+  fi
+ 
+  # check is current session an SSH
+  #if [ `echo $SSH_CLIENT | wc -c` -gt 1 ]; then 
+  if [[ $(who am i) =~ \([-a-zA-Z0-9\.]+\)$ ]] ; then 
+    PS1_SSH="${color_red}[SSH]${color_off} " 
   fi
 
   # parse git status and get git variables
@@ -156,7 +164,7 @@ function prompt_command {
   fi
 
   # set new color prompt
-  PS1="${color_user}${USER}${color_off}@${color_yellow}${LOCAL_HOSTNAME}${color_off}:${color_grey}${PWDNAME}${color_off}${PS1_GIT}${PS1_VENV} $ "
+  PS1="${PS1_SSH}${color_user}${USER}${color_off}@${color_yellow}${LOCAL_HOSTNAME}${color_off}:${color_grey}${PWDNAME}${color_off}${PS1_GIT}${PS1_VENV} $ "
 
   # get cursor position and add new line if we're not in first column
   echo -en "\033[6n" && read -sdR CURPOS
