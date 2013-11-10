@@ -1,7 +1,5 @@
 #!/bin/bash
 
-echo ".bash_aliases"
-
 # Colorize standard commands
 if [ -x /usr/bin/dircolors ]; then
     eval "`dircolors -b`"
