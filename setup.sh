@@ -8,8 +8,14 @@ if [ -z "$MY_PATH" ] ; then
   exit 1  # fail
 fi
 
-if [ -f $HOME/.bash_aliases ]; then
-  rm $HOME/.bash_aliases
-fi
+dotfiles=(".bash_aliases" ".bash_profile" ".bashrc" ".gitconfig")
 
-ln -s $MY_PATH/.bash_aliases $HOME/.bash_aliases
+for file in "${dotfiles[@]}"
+do
+  if [ -f $HOME/$file ]; then
+    rm $HOME/$file
+  fi
+
+  ln -s $MY_PATH/$file $HOME/$file
+done
+

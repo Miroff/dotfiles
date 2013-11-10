@@ -1,12 +1,12 @@
 #!/bin/bash
 
+echo ".bash_aliases"
+
 # Colorize standard commands
 if [ -x /usr/bin/dircolors ]; then
     eval "`dircolors -b`"
     alias ls='ls --color=auto'
 fi
-
-alias grep="grep --color"
 
 # tree aliaces
 alias tree='tree --dirsfirst'
@@ -18,10 +18,10 @@ alias gtree='git log --graph --full-history --all --color --pretty=format:"%x1b[
 md() { mkdir -p "$@" && cd "$@"; }
 
 # exit
-alias q='logout'
-alias :q='logout'
-alias wq='logout'
-alias :wq='logout'
+alias q='exit'
+alias :q='exit'
+alias wq='exit'
+alias :wq='exit'
 
 
 #print horizontal line with current time
