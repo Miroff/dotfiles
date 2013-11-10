@@ -1,0 +1,29 @@
+[user]
+	name = Maksim Gurtovenko
+	email = maksim@gurtovenko.name
+
+[rerere]
+	enabled = true
+
+[color]
+	diff = auto
+	interactive = auto
+	status = auto
+
+[sendemail]
+	smtpserver = smtp.gmail.com
+	smtpserverport = 587
+	smtpencryption = tls
+	smtpuser = maksim@gurtovenko.name
+	assume8bitEncoding = utf-8
+
+[alias]
+        hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+        type = cat-file -t
+        dump = cat-file -p
+
+[format]
+	numbered = true
+
+[core]
+	autocrlf = input
