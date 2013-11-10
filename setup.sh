@@ -8,7 +8,7 @@ if [ -z "$MY_PATH" ] ; then
   exit 1  # fail
 fi
 
-dotfiles=(".bash_aliases" ".bash_profile" ".bashrc" ".gitconfig" ".screenrc")
+dotfiles=(".bash_aliases" ".bash_profile" ".bashrc" ".gitconfig" ".screenrc" ".my.cnf" ".grcat")
 
 for file in "${dotfiles[@]}"
 do

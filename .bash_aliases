@@ -4,6 +4,12 @@
 if [ -x /usr/bin/dircolors ]; then
     eval "`dircolors -b`"
     alias ls='ls --color=auto'
+
+    alias diff='grc diff'
+    alias gcc='grc gcc'
+    alias netstat='grc netstat'
+    alias wdiff='grc wdiff'
+    alias ping='grc ping'
 fi
 
 # tree aliaces
