@@ -1,0 +1,29 @@
+#!/bin/bash
+
+TOOLS_DIR="$HOME/tools"
+
+#Load environment variables
+[[ -f $TOOLS_DIR/env ]] && source $TOOLS_DIR/env
+
+# Setup Java
+if [[ ! -z $JAVA ]]; then
+  JAVA_HOME="$TOOLS_DIR/sdk/$JAVA"
+
+  PATH=$PATH:$JAVA_HOME/bin
+
+  export JAVA_HOME=$JAVA_HOME
+  export JDK_HOME=$JAVA_HOME
+fi
+
+# Setup other tools
+for FILE in $TOOLS_DIR/installed/*
+do
+  if [ -d "$FILE/bin" ]; then
+    PATH=$PATH:$FILE/bin
+  fi
+
+  PATH=$PATH:$FILE
+done
+
+export PATH=$PATH
+

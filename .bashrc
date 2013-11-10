@@ -13,9 +13,8 @@
 
 # add local bin path
 PATH=$HOME/.bin:$PATH
-[ -d $HOME/dotfiles/bin ] && PATH=$HOME/dotfiles/bin:$PATH
 
-#TODO: Call setpath from tools
+[[ -f $HOME/.bin/toolsenv ]] && source $HOME/.bin/toolsenv
 
 ###############################################################################
 #

@@ -19,3 +19,6 @@ do
   ln -s $MY_PATH/$file $HOME/$file
 done
 
+rm -rf $HOME/.bin
+ln -s $MY_PATH/bin $HOME/.bin
+
