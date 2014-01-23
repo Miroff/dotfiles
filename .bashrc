@@ -167,8 +167,9 @@ function prompt_command {
   PS1="${PS1_SSH}${color_user}${USER}${color_off}@${color_yellow}${LOCAL_HOSTNAME}${color_off}:${color_grey}${PWDNAME}${color_off}${PS1_GIT}${PS1_VENV} $ "
 
   # get cursor position and add new line if we're not in first column
-  echo -en "\033[6n" && read -sdR CURPOS
-  [[ ${CURPOS##*;} -gt 1 ]] && echo "${color_error}↵${color_error_off}"
+  #echo -en "\033[6n" && read -sdR CURPOS
+  #[[ ${CURPOS##*;} -gt 1 ]] && echo "${color_error}↵${color_error_off}"
+  #Commented out since this code mess up with prompt
 
   # set title
   echo -ne "\033]0;${USER}@${LOCAL_HOSTNAME}:${PWDNAME}"; echo -ne "\007"
