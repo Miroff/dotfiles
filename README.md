@@ -16,7 +16,9 @@ Java environment
 Java JDK should go to /tools/sdk
 Then JDK directory name should got to /tools/env file:
 
-```JAVA=jdk1.7.0_17```
+```
+JAVA=jdk1.7.0_17
+```
 
 
 
