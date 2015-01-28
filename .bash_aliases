@@ -26,7 +26,7 @@ alias q='exit'
 alias :q='exit'
 alias wq='exit'
 alias :wq='exit'
-
+alias sudo='sudo -E'
 
 #print horizontal line with current time
 div() {
